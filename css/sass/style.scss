@@ -1,0 +1,99 @@
+$btn-size: 70px;
+$display-color: #dbe5da;
+
+body {
+  background: gray;
+}
+
+#calculator {
+  width: $btn-size*6.4;
+  border-radius: $btn-size*0.3;
+  overflow: auto;
+  background: #c6c8c7;
+}
+
+#calculator-display {
+  box-sizing: border-box;
+  width: $btn-size*5.8;
+  height: $btn-size*2*0.8;
+  margin: $btn-size*0.4 auto $btn-size*0.25;
+  background: $display-color;
+  border-radius: $btn-size*0.15;
+  border: $btn-size*0.1 solid darken($display-color, 3%);
+  border: $btn-size*0.1 solid linear-gradient(red, blue);
+
+  #expression,
+  #result {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    padding: 0 $btn-size*0.2;
+    line-height: $btn-size*0.8;
+    font-size: $btn-size*0.55;
+    background: inherit;
+  }
+
+  #result {
+    text-align: right;
+    border-radius: 0 0 $btn-size*0.1 $btn-size*0.1;
+  }
+
+  #expression {
+    text-align: left;
+    border-radius: $btn-size*0.1 $btn-size*0.1 0 0;
+    overflow: hidden;
+    position: relative;
+
+    span {
+      min-width: 100%;
+      float: right;
+      overflow: visible;
+    }
+  }
+
+  #expression:before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    width: $btn-size*0.2;
+    height: 100%;
+    background-color: inherit;
+  }
+}
+
+#basic-operations {
+  width: $btn-size*6;
+  margin: $btn-size*0.1 auto $btn-size*0.4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  button {
+    box-sizing: border-box;
+    border-radius: $btn-size*0.2;
+    border: 0;
+    width: $btn-size;
+    height: $btn-size*0.9;
+    padding: 0;
+    margin: $btn-size*0.1;
+    font-size: $btn-size*0.4;
+    background: #829ac0;
+    background: radial-gradient(#abbfe0, #829ac0);
+    cursor: pointer;
+  }
+
+  button:focus { outline:0; }
+
+  button:active,
+  .btn-active {
+    transform: scale(0.95);
+  }
+
+  .orange {
+    background: #fe9730;
+    background: radial-gradient(#f6be5e, #fe9730);
+  }
+
+  .large { width: $btn-size*2.2; }
+}
